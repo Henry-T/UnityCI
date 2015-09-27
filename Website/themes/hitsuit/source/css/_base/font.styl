@@ -1,0 +1,39 @@
+// 自定义字体
+// 注意一下这里的路径，font.styl is @import by style.styl
+//  so the font folder relative to style.styl is ../font/ 
+font-url(filename)
+  return '../font/' + filename
+
+
+// 批注一下url
+// 这里的url函数貌似都是js里面的
+
+// @font-face is originally defined in css3, to define a custom font family
+// font-family is the font name
+// src font download url
+customfont(family, filename)
+  @font-face
+    font-family family
+    font-weight normal
+    font-style normal
+    src url(font-url(filename + '.eot'))
+    src url(font-url(filename + '.eot?#iefix')) format('embedded-opentype'),
+    url(font-url(filename + '.svg#' + family)) format('svg'),
+    url(font-url(filename + '.woff')) format('woff'),
+    url(font-url(filename + '.ttf')) format('truetype')
+
+customfont(font-custom-family, font-custom-filename)
+
+// FontAwesome Icon Font
+iconfont(family, filename, font-icon-version)
+  @font-face
+    font-family family
+    font-style normal
+    font-weight normal
+    src url(font-url(filename + ".eot?v=#" + font-icon-version))
+    src url(font-url(filename + ".eot?#iefix&v=#" + font-icon-version)),
+      url(font-url(filename + ".woff?v=#" + font-icon-version)) format("woff"),
+      url(font-url(filename + ".ttf?v=#" + font-icon-version)) format("truetype"),
+      url(font-url(filename + ".svg#fontawesomeregular?v=#" + font-icon-version)) format("svg")    
+
+iconfont(font-icon-family, font-icon-filename, font-icon-version)

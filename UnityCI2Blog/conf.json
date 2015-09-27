@@ -1,0 +1,6 @@
+{
+  "src": "E:/proj/UnityCIOnline/QiniuSync",
+  "dest": "qiniu:access_key=f3DiGsATQ71SP7LO9zZr80yROn1lcvKmnYQ5Dgf8&secret_key=7SU7GiGsNN6ddFuGG8CtrOLoMB6VYwZK-NsqsxQZ&bucket=lolofinil&key_prefix=ucicontent/",
+  "deletable": 0,
+  "debug_level": 1
+}

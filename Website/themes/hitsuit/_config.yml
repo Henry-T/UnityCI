@@ -1,0 +1,39 @@
+menu:
+  主页: /
+  角色: /categories/RPG/
+  休闲: /categories/Casual/
+  竞速: /categories/Race/
+  Lolofinil 游戏: /categories/Lolofinil/
+
+widgets:
+- tag
+- links
+
+logo: img/camera.png
+favicon: img/favicon.ico
+appleIcon: img/hitsuit.jpg
+
+authorImg: img/author.jpg
+
+ShowCustomFont: true
+
+fancybox: true
+
+author:
+  intro_line1: "游戏前端工程师 @apowo.com"
+  intro_line2: "你可以在这里找到我"
+  weibo: 2278522517
+  github: Henry-T
+  tsina: 2278522517
+  zcool: 
+  email: 
+
+duoshuo: unityci
+
+jiathis: 
+  id: 
+  tsina: 
+
+google_cse:
+  enable: true
+  cx: 

@@ -1,0 +1,24 @@
+@import 'nib'
+global-reset()
+@import '_base/variable'      // 变量定义方便配置
+@import '_base/font'          // 字体定义
+@import '_base/public'        // 全局样式 固定层级 通用动画
+@import '_partial/header'     // 通用的网站头
+@import '_partial/index'      // ??
+@import '_partial/article'    // ??
+@import '_partial/helper'     // ??
+@import '_partial/aside'      // ?? 
+@import '_partial/footer'     // ??
+@import '_partial/unityci'    // UnityCI专用css
+
+// code highlight
+if highlight
+  @import '_base/code'
+
+// duoshuo css
+if doushuo
+  @import '_partial/duoshuo'
+
+// fancybox css
+if fancybox
+  @import '_partial/gallery'

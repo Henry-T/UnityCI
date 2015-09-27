@@ -1,0 +1,17 @@
+<div>
+  <% if (theme.logo){ %>
+  <div id="imglogo">
+    <img src="<%- config.root %><%- theme.logo%>" alt="<%= config.title %>" title="<%= config.title%>"/>
+  </div>
+  <% } %>
+  <div class="navbar"><a class="navbutton navmobile" href="#" title="<%- __('menu') %>"></a></div>
+  <nav class="animated">
+    <ul>
+      <% var counter = 0; %>
+      <% for (var i in theme.menu){ %>
+        <% counter++; %>
+        <li><a href="<%- theme.menu[i] %>"><%= i %></a></li>
+      <% } %>
+    </ul>
+  </nav>
+</div>

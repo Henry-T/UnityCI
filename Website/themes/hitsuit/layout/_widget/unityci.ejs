@@ -1,0 +1,34 @@
+<% if (site.categories.length) { %> 
+  <div class="unityciCatList">
+    <p class="asidetitle">UnityCI</p>
+    <ul>
+      <% site.categories.populate("posts").each(function(cat){ %>
+        <%
+        var isUnityCICat = false;
+
+        cat.posts.each(function(p){
+          var isUnityCI = false;
+          p = p.populate("tags");
+          p.tags.each(function(t){
+            if ( t.name == "_unityci")
+            {
+              isUnityCI = true;
+            }
+          });
+          if (isUnityCI )
+          {
+            isUnityCICat = true;
+          }
+        });      
+        %>
+        <% if (isUnityCICat) { %>
+        <li>
+          <a href="<%- config.root %><%- cat.path %>" title="<%= cat.name %>">
+            <%= __(cat.name) %>
+          </a>
+        </li>
+        <% } %>
+      <% }); %>
+    </ul>
+  </div>
+<% } %>

@@ -1,0 +1,7 @@
+<Config>
+  <UnityPGPath>E:/proj/UnityPG</UnityPGPath>
+  <BlogPath>E:/myblog/source/_posts/unityci</BlogPath>
+  <QiniuPath>E:/proj/UnityCIOnline/QiniuSync</QiniuPath>
+  <QiniuConfig>E:/UnityCI2Blog/conf.json</QiniuConfig>
+  <QiniuBucket>lolofinil</QiniuBucket>
+</Config>

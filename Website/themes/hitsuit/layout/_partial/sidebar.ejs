@@ -1,0 +1,23 @@
+<!-- aside button -->
+<div class="openaside">
+  <a class="navbutton" href="#" title="<%= __('showsidebar')%>">
+  </a>
+</div>
+<!-- toc -->
+<% if( table && (item.toc !== false)) { %>
+<div id="toc" class="toc-aside">
+  <strong class="toc-title"><%= __('contents')%></strong>
+  <%- toc(item.content) %>
+</div>
+<% } %>
+<!-- aside -->
+<div id="asidepart">
+  <div class="closeaside">
+    <a class="closebutton" href="#" title="<%= __('hidesidebar') %>"></a>
+  </div>
+  <aside class="clearfix">
+  <% if (uciOnly && uciOnly === true) {%>
+    <%- partial('../_widget/unityci') %>
+  <% } %>
+  </aside>
+</div>

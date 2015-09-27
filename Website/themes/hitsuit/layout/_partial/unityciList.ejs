@@ -1,0 +1,20 @@
+<%
+var title = "UnityCI";
+var icon = "unityci";
+%>
+
+<div id="main" class="unityciListMain">
+  <div id="unityciList">
+    <% page.posts.each(function(post){ %>
+      <%- partial("_partial/unityciListItem", {post: post}) %>
+    <% }); %>
+    <% if (page.total > 1){ %>
+      <nav id="page-nav" class="clearfix archive-nav" >
+        <%- paginator({
+          prev_text: "&laquo; Prev",
+          next_text: "Next &raquo;"
+        }) %>
+      </nav>
+    <% } %>
+  </div>
+</div>

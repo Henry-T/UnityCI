@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html <%if(config.language){%>lang="<%= config.language %>"<% } %>>
+<head>
+  <meta charset="UTF-8">
+  <%
+  var title = page.title;
+  %>
+  <title><% if (title){ %><%= title%> | <%}%><%= config.title%></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+  <% if (config.author) { %>
+  <meta name="author" content=<%= config.author%>><% } %>
+  <% if (theme.favicon) { %>
+  <link rel="icon" href="<%- config.root%><%- theme.favicon%>">
+  <% } %>
+  <% if (theme.appleIcon){ %>
+  <link rel="apple-touch-icon" href="<%- config.root%><%- theme.appleIcon%>">
+  <link rel="apple-touch-icon-precomposed" href="<%- config.root %><%- theme.appleIcon%>">
+  <% } %>
+  <%- css('css/style') %>
+
+  <% //- partial('_partial/js.ejs')%>
+</head>

@@ -1,0 +1,30 @@
+<% //仅显示标签为生活的博客 %>
+
+<div id="main">
+
+<% 
+var filterResult = site.posts.filter(function(blog, i){
+  var isLife = false;
+  blog.tags.each(function(t){
+    if ( t.name === "心情")
+    {
+      isLife = true;
+    }
+  });
+  return isLife;
+});
+%>
+
+<% filterResult.each(function(blog){ %>
+  <%- partial('_partial/article', {item: blog, index: true,desc: true}) %>
+<% }); %>
+
+<% if (page.total > 1){ %>
+  <nav id="page-nav" class="clearfix">
+    <%- paginator({
+      prev_text: '&laquo; Prev',
+      next_text: 'Next &raquo;'
+    }) %>
+  </nav>
+<% } %>
+</div>

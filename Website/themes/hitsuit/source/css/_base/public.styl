@@ -1,0 +1,146 @@
+// 将容器放置在父级中心，并将宽高尺寸设置为父级的一半
+absolute-center(width, height = width)
+  width width
+  height height
+  position absolute    // absolute比起relative似乎不会影响到其他元素位置
+  top 50%
+  left 50%
+  margin-top width * -0.5
+  margin-left height * -0.5
+
+
+font-smoothing()
+  -webkit-font-smoothing antialiased
+  -moz-osx-font-smoothing grayscale
+
+// * 全局选择器，应用于所有样式
+// -webkit-margin-xxxx 可以为不同书写方向的语言指定正确的边距
+*
+  -webkit-margin-before 0
+  -webkit-margin-after 0
+  
+div
+  margin auto
+
+body
+  background color-background
+  font-family font-default
+  font-size font-size
+  color color-font
+  line-height line-height
+
+small
+  font-size 80%
+
+// 逗号分隔符可以同时定义多个css
+sub, sup
+  font-size 75%
+  line-height 0
+  position relative
+  vertical-align baseline
+
+// 上面已经定义过sup,这里是补充定义
+sup
+  top -0.5em
+  padding-left 0.3em
+
+sub
+  bottom -0.25em
+
+// &:hover 父级引用伪选择器 
+a
+  text-decoration none    // 去掉超链接的下划线
+  color color-font
+  &:hover,&:focus
+    outline 0
+    text-decoration none
+    transition color .25s, background .5s
+  &:hover:before
+    transition color .25s, background .5s
+
+// 关闭输入框激活是的默认轮廓线
+input:focus
+  outline none
+
+
+// todo &::又是怎么回事
+input, button
+  margin: 0
+  padding: 0
+  &::-moz-focus-inner
+    border: 0
+    padding: 0
+
+h1
+  font-size 1.5em
+
+// font awesome 的 css
+// font-family 在font.styl中定义
+// display inline-block 是行内块显示模式，适合拼接富文本段落
+.fa
+  display inline-block
+  font-family FontAwesome
+  font-style normal
+  font-weight normal
+  line-height 1
+  -webkit-font-smoothing antialiased
+  -moz-osx-font-smoothing grayscale
+
+// todo clearfix是nib插件定义的，到底有什么用处？
+.clearfix
+  clearfix()
+
+// 不同平台自己支持的选择标记
+// :before 表示在选择元素前插入元素内容为content  (测试发现::before与它没区别)
+// 关于 \f003 搜索图标 Font-Awesome设计用于<i>标签(斜体文本块) 但是:before的content自己写该怎么查呢
+// 可以去fontawesome.io网站上面，随便找个fontawesome.css，找到before的选择器里面就有
+// 也可以在这里查 http://www.bootcss.com/p/font-awesome/design.html
+// todo FontAwesome是pacman集成的，其流程就在这个主题里面
+
+::-webkit-input-placeholder { color:color-white; padding: 2px 0 0 4px;}
+::-moz-placeholder { color:color-white; padding: 2px 0 0 4px;}
+:-ms-input-placeholder { color:color-white; padding: 2px 0 0 4px }
+::-webkit-input-placeholder { font-family:font-icon-family; font-smoothing(); content: "\f002"; padding-right: 4px; }
+::-moz-placeholder:before{ font-family:font-icon-family; font-smoothing(); content: "\f002"; padding-right: 4px;}
+:-ms-input-placeholder::before{font-family: font-icon-family; font-smoothing(); content: "\f002"; padding-right: 4px;}
+
+// [] 是css标准中的属性选择器
+// \f000d 叉叉图标
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration
+  -webkit-appearance none
+  
+::-webkit-search-cancel-button:after
+  font-family font-icon-family
+  font-smoothing()
+  content '\f00d'
+  color color-white
+  padding-right 4px
+
+// anim-fill-mode forwards停在末为止 backwards停在初为止 both可以理解为播到哪儿停哪儿
+.animated
+  animation-fill-mode both
+  animation-duration 1s
+
+// css3 关键帧 webkit
+@-webkit-keyframes fadeIn
+  0%
+    opacity 0
+  100%
+    opacity 1
+
+.fadeIn
+  animation-name fadeIn
+
+// css3 关键帧 ie
+// todo fadeInDown 和 fadeOut名字不对应，是否作者写错了?
+@keyframes fadeInDown
+  0%
+    opacity 0
+    transform translateY(-20px)
+  100%
+    opacity 0
+    transform translateY(0)
+
+.fadeOut
+  animation-name fadeOut
